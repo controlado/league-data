@@ -20,7 +20,7 @@ class Champion:
     """Objeto que contém as informações de um campeão.
 
     Exemplo de uso:
-        ```python
+        ```python linenums="1"
         from league_data import League
 
         league = League()
@@ -73,7 +73,7 @@ class Skin:
     """Objeto que contém as informações de uma skin.
 
     Exemplo de uso:
-        ```python
+        ```python linenums="1"
         from league_data import League
 
         league = League()

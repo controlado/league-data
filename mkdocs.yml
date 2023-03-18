@@ -15,7 +15,17 @@ theme:
     accent: red
 
 plugins:
-  mkdocstrings:
-    handlers:
-      python:
-        paths: [league_data]
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [league_data]
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_lang_class: true
+      line_spans: __span
+
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences

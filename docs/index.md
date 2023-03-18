@@ -20,28 +20,27 @@ pip install league-data
 <details>
     <summary> Buscar um campeão ou skin </summary>
 
-```python
-    from league_data import League
+```python linenums="1"
+from league_data import League
 
-    league = League()
-    champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
-    skin = league["ocean song zeri"]  # -> <league_data.models.Skin object at ...>
-    skin.data  # todo objeto possui o seu dicionário de informações também
+league = League()
+champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
+skin = league["ocean song zeri"]  # -> <league_data.models.Skin object at ...>
+skin.data  # todo objeto possui o seu dicionário de informações também
 ```
 
 </details>
 
 <details>
     <summary> Navegar nas informações dos itens </summary>
-    Existe duas sintaxes no projeto, utilizando objetos e dicionários.
 
-```python
-    from league_data import League
+```python linenums="1" title="Existe duas sintaxes no projeto, utilizando objetos e dicionários."
+from league_data import League
 
-    league = League()
-    champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
-    skins_object = champion.skins  # -> [<league_data.models.Skin object>, ...]
-    skins_dict = champion["skins"]  # -> {"nightblade irelia": {"id": ...}, ...}
+league = League()
+champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
+skins_object = champion.skins  # -> [<league_data.models.Skin object>, ...]
+skins_dict = champion["skins"]  # -> {"nightblade irelia": {"id": ...}, ...}
 ```
 
 </details>
@@ -49,14 +48,14 @@ pip install league-data
 <details>
     <summary> Reutilizar os dados antigos </summary>
 
-```python
-    from league_data import Explorer, League
+```python linenums="1"
+from league_data import Explorer, League
 
-    league = League()  # aqui você gera o league.data e pode utilizar como quiser
-    irelia = league["irelia"]  # -> <league_data.models.Champion object at ...>
+league = League()  # aqui você gera o league.data e pode utilizar como quiser
+irelia = league["irelia"]  # -> <league_data.models.Champion object at ...>
 
-    explorer = Explorer(league.data)  # reutilizando os dados gerados antes
-    irelia = explorer["irelia"]  # -> <league_data.models.Champion object at ...>
+explorer = Explorer(league.data)  # reutilizando os dados gerados antes
+irelia = explorer["irelia"]  # -> <league_data.models.Champion object at ...>
 ```
 
 </details>

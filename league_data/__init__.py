@@ -4,7 +4,7 @@ Para utilizar o módulo, importe a classe League e crie uma instância da mesma,
 logo em seguida, simplesmente busque um campeão ou skin como se fosse um dict.
 
 Exemplo:
-    ```python
+    ```python linenums="1"
     from league_data import League
 
     league = League()  # instancia a classe corretamente
