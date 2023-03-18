@@ -22,6 +22,16 @@ class League:
 
     URL = "https://raw.communitydragon.org"
 
+    def get_data(self) -> dict:
+        """Busca todos os dados dos campeões do League of Legends.
+
+        Returns:
+            data (dict): Os dados dos campeões e suas skins.
+        """
+        url = f"{self.URL}/latest/plugins/rcp-be-lol-game-data/global/default/v1/skins.json"
+        response = self.session.request(method="get", url=url)
+        return response.json()
+
     def __init__(self) -> None:
         """Cria uma sessão e gera os dados necessários."""
         self.session = requests.Session()
@@ -40,13 +50,3 @@ class League:
             None (None): Nenhum item foi encontrado.
         """
         return self.explorer[name]
-
-    def get_data(self) -> dict:
-        """Busca todos os dados dos campeões do League of Legends.
-
-        Returns:
-            data (dict): Os dados dos campeões e suas skins.
-        """
-        url = f"{self.URL}/latest/plugins/rcp-be-lol-game-data/global/default/v1/skins.json"
-        response = self.session.request(method="get", url=url)
-        return response.json()

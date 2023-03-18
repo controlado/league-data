@@ -42,18 +42,6 @@ class Champion:
         return self.name
 
     @property
-    def skins(self) -> list[Skin]:
-        """Skins que o campeão possui."""
-        return [
-            Skin(
-                self.explorer,
-                self.data,
-                self.data["skins"][data]
-            )
-            for data in self.data["skins"]
-        ]
-
-    @property
     def id(self) -> str:
         """ID do campeão."""
         return self.data["id"]
@@ -67,6 +55,18 @@ class Champion:
     def art(self) -> str:
         """URL da arte do campeão."""
         return self.data["art"]
+
+    @property
+    def skins(self) -> list[Skin]:
+        """Skins que o campeão possui."""
+        return [
+            Skin(
+                self.explorer,
+                self.data,
+                self.data["skins"][data]
+            )
+            for data in self.data["skins"]
+        ]
 
 
 class Skin:
@@ -98,11 +98,6 @@ class Skin:
         return self.name
 
     @property
-    def champion(self) -> Champion:
-        """O campeão que possui essa skin."""
-        return Champion(self.explorer, self.champion_data)
-
-    @property
     def id(self) -> str:
         """ID da skin."""
         return self.data["id"]
@@ -113,11 +108,16 @@ class Skin:
         return self.data["name"]
 
     @property
+    def art(self) -> str:
+        """URL da arte da skin."""
+        return self.data["art"]
+
+    @property
     def rarity(self) -> str:
         """Raridade da skin."""
         return self.data["rarity"]
 
     @property
-    def art(self) -> str:
-        """URL da arte da skin."""
-        return self.data["art"]
+    def champion(self) -> Champion:
+        """O campeão que possui essa skin."""
+        return Champion(self.explorer, self.champion_data)

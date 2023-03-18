@@ -17,27 +17,6 @@ from league_data.models import Champion, Skin
 class Explorer:
     """Explore e entenda facilmente os dados dos campeões."""
 
-    def __init__(self, data: dict) -> None:
-        """Reformula os dados que recebe como parâmetro."""
-        self.data = data
-        self.champions = self.__get_champions()
-
-    def __getitem__(self, name: str) -> Champion | Skin | None:
-        """Retorna os dados do campeão ou skin, caso exista.
-
-        Args:
-            name (str): Nome do campeão ou skin.
-
-        Returns:
-            Champion (Champion): Objeto do campeão encontrado.
-            Skin (Skin): Objeto da skin encontrada.
-            None (None): Nenhum item foi encontrado.
-        """
-        if champion := self.get_champion(name):
-            return champion
-
-        return self.get_skin(name)
-
     def get_champion(self, name: str) -> Champion | None:
         """Retorna o objeto do campeão, caso exista.
 
@@ -71,6 +50,32 @@ class Explorer:
                 champion_data = self.champions[champion]
                 skin_data = self.champions[champion]["skins"][name]
                 return Skin(self, champion_data, skin_data)
+
+    @staticmethod
+    def get_splash_art(champion_id: str, skin_id: str) -> str:
+        """Retorna a URL do campeão ou da skin desejada com base em seus IDS."""
+        return f"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/{champion_id}/{skin_id}.jpg"
+
+    def __init__(self, data: dict) -> None:
+        """Reformula os dados que recebe como parâmetro."""
+        self.data = data
+        self.champions = self.__get_champions()
+
+    def __getitem__(self, name: str) -> Champion | Skin | None:
+        """Retorna os dados do campeão ou skin, caso exista.
+
+        Args:
+            name (str): Nome do campeão ou skin.
+
+        Returns:
+            Champion (Champion): Objeto do campeão encontrado.
+            Skin (Skin): Objeto da skin encontrada.
+            None (None): Nenhum item foi encontrado.
+        """
+        if champion := self.get_champion(name):
+            return champion
+
+        return self.get_skin(name)
 
     def __get_champions(self) -> dict:
         champions = {}
@@ -113,8 +118,3 @@ class Explorer:
     def __get_champion_id(self, index: str) -> str:
         endpoint = self.data[index]["splashPath"]
         return endpoint.split("/")[-2]
-
-    @staticmethod
-    def get_splash_art(champion_id: str, skin_id: str) -> str:
-        """Retorna a URL do campeão ou da skin desejada com base em seus IDS."""
-        return f"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/{champion_id}/{skin_id}.jpg"
