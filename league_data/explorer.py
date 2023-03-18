@@ -29,6 +29,22 @@ class Explorer:
         self.data = data
         self.champions = self.__get_champions()
 
+    def __getitem__(self, name: str) -> Champion | Skin | None:
+        """Retorna os dados do campeão ou skin, caso exista.
+
+        Args:
+            name (str): Nome do campeão ou skin.
+
+        Returns:
+            Champion: Objeto do campeão encontrado.
+            Skin: Objeto da skin encontrada.
+            None: Nenhum item foi encontrado.
+        """
+        if champion := self.get_champion(name):
+            return champion
+
+        return self.get_skin(name)
+
     def get_champion(self, name: str) -> Champion | None:
         """Retorna o objeto do campeão, caso exista.
 

@@ -24,4 +24,5 @@ Licença:
     `GNU` `Version 2`
 """
 
+from league_data.explorer import Explorer
 from league_data.league import League

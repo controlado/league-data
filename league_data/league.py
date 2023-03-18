@@ -45,10 +45,7 @@ class League:
             Skin: Objeto da skin encontrada.
             None: Nenhum item foi encontrado.
         """
-        if champion := self.explorer.get_champion(name):
-            return champion
-
-        return self.explorer.get_skin(name)
+        return self.explorer[name]
 
     def get_data(self) -> dict:
         """Busca todos os dados dos campeões do League of Legends.
