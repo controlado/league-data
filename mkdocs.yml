@@ -1,0 +1,14 @@
+site_name: League-data
+repo_url: https://github.com/controlado/league-data
+repo_name: controlado/league-data
+edit_uri: tree/master/docs
+
+theme:
+  name: material
+  language: pt-BR
+
+plugins:
+  mkdocstrings:
+    handlers:
+      python:
+        paths: [league_data]
