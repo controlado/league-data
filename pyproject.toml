@@ -1,0 +1,20 @@
+[tool.poetry]
+version = "0.1.0"
+name = "league-data"
+description = "Tenha acesso facilmente aos dados dos campeões e skins do League of Legends."
+readme = "README.md"
+authors = ["Yan Gabriel <yangabrielogy@gmail.com>"]
+packages = [{include = "league_data"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.28.2"
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.2"
+pydocstyle = "^6.3.0"
+easycython = "^1.0.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
