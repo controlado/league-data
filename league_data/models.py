@@ -22,6 +22,12 @@ class Champion:
     Atributos:
         explorer (Explorer): Explorador que criou este campeão.
         data (dict): Dicionário com as informações desse campeão.
+
+    Propriedades:
+        skins (list[Skin]): Skins que o campeão possui.
+        id (str): ID do campeão.
+        name (str): Nome do campeão.
+        art (str): Link da arte do campeão.
     """
 
     def __init__(self, explorer: ..., data: dict) -> None:
@@ -51,7 +57,7 @@ class Champion:
 
     @property
     def skins(self) -> list[Skin]:
-        """Retorna os objetos das skins do campeão."""
+        """Skins que o campeão possui."""
         return [
             Skin(
                 self.explorer,
@@ -63,17 +69,17 @@ class Champion:
 
     @property
     def id(self) -> str:
-        """Retorna o ID do campeão."""
+        """ID do campeão."""
         return self.data["id"]
 
     @property
     def name(self) -> str:
-        """Retorna o nome do campeão."""
+        """Nome do campeão."""
         return self.data["name"]
 
     @property
     def art(self) -> str:
-        """Retorna a arte do campeão."""
+        """URL da arte do campeão."""
         return self.data["art"]
 
 
@@ -84,6 +90,13 @@ class Skin:
         explorer (Explorer): Explorador que criou essa skin.
         champion (dict): Dicionário do campeão que possui essa skin.
         data (dict): Dicionário com as informações dessa skin.
+
+    Propriedades:
+        champion (Champion): O campeão que possui essa skin.
+        id (str): ID da skin.
+        name (str): Nome da skin.
+        rarity (str): Raridade da skin.
+        art (str): URL da arte da skin.
     """
 
     def __init__(self, explorer: ..., champion: dict, data: dict) -> None:
@@ -114,25 +127,25 @@ class Skin:
 
     @property
     def champion(self) -> Champion:
-        """Retorna o campeão que possui essa skin."""
+        """O campeão que possui essa skin."""
         return Champion(self.explorer, self.champion_data)
 
     @property
     def id(self) -> str:
-        """Retorna o ID da skin."""
+        """ID da skin."""
         return self.data["id"]
 
     @property
     def name(self) -> str:
-        """Retorna o nome da skin."""
+        """Nome da skin."""
         return self.data["name"]
 
     @property
     def rarity(self) -> str:
-        """Retorna a raridade da skin."""
+        """Raridade da skin."""
         return self.data["rarity"]
 
     @property
     def art(self) -> str:
-        """Retorna a arte da skin."""
+        """URL da arte da skin."""
         return self.data["art"]
