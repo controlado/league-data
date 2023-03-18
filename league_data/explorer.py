@@ -11,6 +11,8 @@ Licença:
     `GNU` `Version 2`
 """
 
+from league_data.models import Champion, Skin
+
 
 class Explorer:
     """Explore e entenda facilmente os dados dos campeões.
@@ -27,23 +29,39 @@ class Explorer:
         self.data = data
         self.champions = self.__get_champions()
 
-    def get_item(self, name: str) -> dict | None:
-        """Retorna os dados do item, caso exista.
+    def get_champion(self, name: str) -> Champion | None:
+        """Retorna o objeto do campeão, caso exista.
 
         Args:
-            name (str): Nome do item.
+            name (str): Nome do campeão.
 
         Returns:
-            dict | None: Dados do item requisitado.
+            Champion: O objeto que contém os dados do campeão.
+            None: Caso o nome do campeão não seja válido.
         """
-        name = name.lower()  # todos os champions estão como lower.
+        name = name.lower()
 
         if name in self.champions:
-            return self.champions[name]
+            champion_data = self.champions[name]
+            return Champion(self, champion_data)
+
+    def get_skin(self, name: str) -> Skin | None:
+        """Retorna o objeto da skin, caso exista.
+
+        Args:
+            name (str): Nome da skin.
+
+        Returns:
+            Skin: O objeto que contém os dados da skin.
+            None: Caso o nome da skin não seja válida.
+        """
+        name = name.lower()
 
         for champion in self.champions:
             if name in self.champions[champion]["skins"]:
-                return self.champions[champion]["skins"][name]
+                champion_data = self.champions[champion]
+                skin_data = self.champions[champion]["skins"][name]
+                return Skin(self, champion_data, skin_data)
 
     def __get_champions(self) -> dict:
         champions = {}

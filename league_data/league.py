@@ -14,6 +14,7 @@ Licença:
 import requests
 
 from league_data.explorer import Explorer
+from league_data.models import Champion, Skin
 
 
 class League:
@@ -33,16 +34,21 @@ class League:
         self.data = self.get_data()
         self.explorer = Explorer(self.data)
 
-    def __getitem__(self, name: str) -> dict | None:
+    def __getitem__(self, name: str) -> Champion | Skin | None:
         """Retorna os dados do campeão ou skin, caso exista.
 
         Args:
             name (str): Nome do campeão ou skin.
 
         Returns:
-            dict | None: Dados do item requisitado.
+            Champion: Objeto do campeão encontrado.
+            Skin: Objeto da skin encontrada.
+            None: Nenhum item foi encontrado.
         """
-        return self.explorer.get_item(name)
+        if champion := self.explorer.get_champion(name):
+            return champion
+
+        return self.explorer.get_skin(name)
 
     def get_data(self) -> dict:
         """Busca todos os dados dos campeões do League of Legends.
