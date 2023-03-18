@@ -24,9 +24,9 @@ pip install league-data
     from league_data import League
 
     league = League()
-    champion = league["zeri"]  # vai retornar um objeto (<league_data.models.Champion object at ...>)
-    skin = league["ocean song zeri"]  # vai retornar um objeto (<league_data.models.Skin object at ...>)
-    skin_data = skin.data  # todo objeto possui o seu dicionário de informações também
+    champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
+    skin = league["ocean song zeri"]  # -> <league_data.models.Skin object at ...>
+    skin.data  # todo objeto possui o seu dicionário de informações também
 ```
 
 </details>
