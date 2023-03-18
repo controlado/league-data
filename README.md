@@ -26,7 +26,7 @@ pip install league-data
     league = League()
     champion = league["zeri"]  # vai retornar um objeto (<league_data.models.Champion object at ...>)
     skin = league["ocean song zeri"]  # vai retornar um objeto (<league_data.models.Skin object at ...>)
-    skin_data = skin.data  # todo objeto possui o seu dicionário de informações também!
+    skin_data = skin.data  # todo objeto possui o seu dicionário de informações também
 ```
 
 </details>
@@ -41,7 +41,7 @@ pip install league-data
     league = League()
     champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
     skins_object = champion.skins  # -> [<league_data.models.Skin object>, ...]
-    skins_dict = champion/"skins"  # -> {"nightblade irelia": {"id": ...}, ...}
+    skins_dict = champion["skins"]  # -> {"nightblade irelia": {"id": ...}, ...}
 ```
 
 </details>

@@ -35,13 +35,13 @@ class Champion:
             irelia = league["irelia"]
 
             skins = irelia.skins  # vai retornar uma lista com os objetos das skins
-            skins = irelia/"skins"  # vai retornar as skins através de dicionários
+            skins = irelia["skins"]  # vai retornar as skins através de dicionários
             ```
         """
         self.explorer = explorer
         self.data = data
 
-    def __truediv__(self, value: str) -> Any:
+    def __getitem__(self, value: str) -> Any:
         """Retorna um valor do dicionário do campeão."""
         return self.data.get(value)
 
@@ -97,14 +97,14 @@ class Skin:
             vayne = league["vayne"]
 
             art = vayne.art  # vai retornar uma propriedade do objeto
-            art = vayne/"art"  # vai retornar um item do dicionário da skin
+            art = vayne["art"]  # vai retornar um item do dicionário da skin
             ```
         """
         self.explorer = explorer
         self.champion_data = champion
         self.data = data
 
-    def __truediv__(self, value: str) -> Any:
+    def __getitem__(self, value: str) -> Any:
         """Retorna um valor do dicionário da skin."""
         return self.data.get(value)
 
