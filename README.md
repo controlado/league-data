@@ -2,6 +2,10 @@
 
 Tenha os dados dos campeões e skins do League of Legends com facilidade.
 
+- [Documentação](https://league-data.readthedocs.io/en/latest/)
+- [Pypi](https://pypi.org/project/league-data/)
+- [Releases](https://github.com/controlado/league-data/releases/)
+
 ## Dependências
 
 - [Python 3.11](https://www.python.org/downloads/release/python-3112/) (ou alguma outra superior)
