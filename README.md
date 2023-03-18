@@ -52,7 +52,7 @@ pip install league-data
 ```python
     from league_data import Explorer, League
 
-    league = League()  # aqui você gera os league.data e pode utilizar como quiser
+    league = League()  # aqui você gera o league.data e pode utilizar como quiser
     irelia = league["irelia"]  # -> <league_data.models.Champion object at ...>
 
     explorer = Explorer(league.data)  # reutilizando os dados gerados antes
