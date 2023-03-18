@@ -18,13 +18,7 @@ from league_data.models import Champion, Skin
 
 
 class League:
-    """Tenha acesso facilmente aos dados dos campeões e skins do League of Legends.
-
-    Atributos:
-        session (requests.Session): Sessão padrão para fazer qualquer requisição.
-        data (dict): Os dados dos campeões de forma crua, não é destinado ao usuário.
-        explorer (Explorer): Explorador dos dados crus para o usuário.
-    """
+    """Tenha acesso facilmente aos dados dos campeões e skins do League of Legends."""
 
     URL = "https://raw.communitydragon.org"
 
@@ -41,17 +35,17 @@ class League:
             name (str): Nome do campeão ou skin.
 
         Returns:
-            Champion: Objeto do campeão encontrado.
-            Skin: Objeto da skin encontrada.
-            None: Nenhum item foi encontrado.
+            Champion (Champion): Objeto do campeão encontrado.
+            Skin (Skin): Objeto da skin encontrada.
+            None (None): Nenhum item foi encontrado.
         """
         return self.explorer[name]
 
     def get_data(self) -> dict:
         """Busca todos os dados dos campeões do League of Legends.
 
-        Retorna:
-            dict: Os dados dos campeões e suas skins.
+        Returns:
+            data (dict): Os dados dos campeões e suas skins.
         """
         url = f"{self.URL}/latest/plugins/rcp-be-lol-game-data/global/default/v1/skins.json"
         response = self.session.request(method="get", url=url)

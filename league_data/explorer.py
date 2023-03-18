@@ -17,11 +17,8 @@ from league_data.models import Champion, Skin
 class Explorer:
     """Explore e entenda facilmente os dados dos campeões.
 
-    Essa classe deve ser utilizada como apoio à classe League.
-
-    Atributos:
-        data (dict): Os dados crus extraídos da classe League.
-        champions (dict): Os dados crus reformulados.
+    Essa classe deve ser utilizada como apoio à classe League
+    ou para reutilizar os dados que a classe League gerou.
     """
 
     def __init__(self, data: dict) -> None:
@@ -36,9 +33,9 @@ class Explorer:
             name (str): Nome do campeão ou skin.
 
         Returns:
-            Champion: Objeto do campeão encontrado.
-            Skin: Objeto da skin encontrada.
-            None: Nenhum item foi encontrado.
+            Champion (Champion): Objeto do campeão encontrado.
+            Skin (Skin): Objeto da skin encontrada.
+            None (None): Nenhum item foi encontrado.
         """
         if champion := self.get_champion(name):
             return champion
@@ -52,8 +49,8 @@ class Explorer:
             name (str): Nome do campeão.
 
         Returns:
-            Champion: O objeto que contém os dados do campeão.
-            None: Caso o nome do campeão não seja válido.
+            Champion (Champion): O objeto que contém os dados do campeão.
+            None (None): Caso o nome do campeão não seja válido.
         """
         name = name.lower()
 
@@ -68,8 +65,8 @@ class Explorer:
             name (str): Nome da skin.
 
         Returns:
-            Skin: O objeto que contém os dados da skin.
-            None: Caso o nome da skin não seja válida.
+            Skin (Skin): O objeto que contém os dados da skin.
+            None (None): Caso o nome da skin não seja válida.
         """
         name = name.lower()
 

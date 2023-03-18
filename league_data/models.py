@@ -19,31 +19,17 @@ from typing import Any
 class Champion:
     """Objeto que contém as informações de um campeão.
 
-    Atributos:
-        explorer (Explorer): Explorador que criou este campeão.
-        data (dict): Dicionário com as informações desse campeão.
+    Exemplo de uso:
+        ```python
+        from league_data import League
 
-    Propriedades:
-        skins (list[Skin]): Skins que o campeão possui.
-        id (str): ID do campeão.
-        name (str): Nome do campeão.
-        art (str): Link da arte do campeão.
+        league = League()
+        irelia = league["irelia"]  # -> <league_data.models.Champion object at ...>
+        ```
     """
 
     def __init__(self, explorer: ..., data: dict) -> None:
-        """Instancia o objeto contendo as informações do campeão.
-
-        Exemplo de uso:
-            ```python
-            from league_data import League
-
-            league = League()
-            irelia = league["irelia"]
-
-            skins = irelia.skins  # vai retornar uma lista com os objetos das skins
-            skins = irelia["skins"]  # vai retornar as skins através de dicionários
-            ```
-        """
+        """Instancia o objeto contendo as informações do campeão."""
         self.explorer = explorer
         self.data = data
 
@@ -86,33 +72,19 @@ class Champion:
 class Skin:
     """Objeto que contém as informações de uma skin.
 
-    Atributos:
-        explorer (Explorer): Explorador que criou essa skin.
-        champion (dict): Dicionário do campeão que possui essa skin.
-        data (dict): Dicionário com as informações dessa skin.
+    Exemplo de uso:
+        ```python
+        from league_data import League
 
-    Propriedades:
-        champion (Champion): O campeão que possui essa skin.
-        id (str): ID da skin.
-        name (str): Nome da skin.
-        rarity (str): Raridade da skin.
-        art (str): URL da arte da skin.
+        league = League()
+        vayne = league["vayne"]
+        vayne_skins = vayne.skins  # -> [<league_data.models.Skin object>, ...]
+        vayne_skins = vayne["skins"]  # -> {"aristocrat vayne": {"id": ...}, ...}
+        ```
     """
 
     def __init__(self, explorer: ..., champion: dict, data: dict) -> None:
-        """Instancia o objeto contendo as informações da skin.
-
-        Exemplo de uso:
-            ```python
-            from league_data import League
-
-            league = League()
-            vayne = league["vayne"]
-
-            art = vayne.art  # vai retornar uma propriedade do objeto
-            art = vayne["art"]  # vai retornar um item do dicionário da skin
-            ```
-        """
+        """Instancia o objeto contendo as informações da skin."""
         self.explorer = explorer
         self.champion_data = champion
         self.data = data
