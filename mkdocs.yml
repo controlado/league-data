@@ -19,6 +19,8 @@ plugins:
       handlers:
         python:
           paths: [league_data]
+          options:
+            members_order: source
 
 markdown_extensions:
   - pymdownx.highlight:
