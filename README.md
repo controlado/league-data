@@ -15,7 +15,7 @@ Com o Python instalado, basta seguir as etapas de instalação.
 pip install league-data
 ```
 
-## Exemplo de uso
+## Exemplos
 
 <details>
     <summary> Buscar um campeão ou skin </summary>
