@@ -7,6 +7,13 @@ theme:
   name: material
   language: pt-BR
 
+  font:
+    text: Quicksand
+
+  palette:
+    primary: red
+    accent: red
+
 plugins:
   mkdocstrings:
     handlers:

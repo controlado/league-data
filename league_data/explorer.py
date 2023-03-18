@@ -15,11 +15,7 @@ from league_data.models import Champion, Skin
 
 
 class Explorer:
-    """Explore e entenda facilmente os dados dos campeões.
-
-    Essa classe deve ser utilizada como apoio à classe League
-    ou para reutilizar os dados que a classe League gerou.
-    """
+    """Explore e entenda facilmente os dados dos campeões."""
 
     def __init__(self, data: dict) -> None:
         """Reformula os dados que recebe como parâmetro."""
