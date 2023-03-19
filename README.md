@@ -1,4 +1,4 @@
-# `📩` League-data
+# `📂` `League-data`
 
 Tenha os dados dos campeões e skins do League of Legends com facilidade.
 
