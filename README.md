@@ -20,8 +20,7 @@ Basta executar esse comando no seu terminal.
 
 ## Como funciona?
 
-O projeto foi criado com o intuito de facilitar a vida de quem
-usa os dados dos campeões do League of Legends em seus códigos.
+A biblioteca foi criada para facilitar a vida de quem usa os dados de campeões do League of Legends.
 
 ### Exemplos
 
