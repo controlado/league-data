@@ -24,14 +24,14 @@ pip install league-data
 <details>
     <summary> Buscar um campeão ou skin </summary>
 
-    ```python
-    from league_data import League
+```python
+from league_data import League
 
-    league = League()
-    champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
-    skin = league["ocean song zeri"]  # -> <league_data.models.Skin object at ...>
-    skin.data  # todo objeto possui o seu dicionário de informações também
-    ```
+league = League()
+champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
+skin = league["ocean song zeri"]  # -> <league_data.models.Skin object at ...>
+skin.data  # todo objeto possui o seu dicionário de informações também
+```
 
 </details>
 
@@ -39,14 +39,14 @@ pip install league-data
     <summary> Navegar nas informações dos itens </summary>
     Existe duas sintaxes no projeto, utilizando objetos e dicionários.
 
-    ```python
-    from league_data import League
+```python
+from league_data import League
 
-    league = League()
-    champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
-    skins_object = champion.skins  # -> [<league_data.models.Skin object>, ...]
-    skins_dict = champion["skins"]  # -> {"nightblade irelia": {"id": ...}, ...}
-    ```
+league = League()
+champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
+skins_object = champion.skins  # -> [<league_data.models.Skin object>, ...]
+skins_dict = champion["skins"]  # -> {"nightblade irelia": {"id": ...}, ...}
+```
 
 </details>
 
@@ -54,12 +54,12 @@ pip install league-data
     <summary> Reutilizar os dados antigos </summary>
     Ao instanciar a classe League, é gerado os dados se não o receber no parâmetro.
 
-    ```python
-    from league_data import League
+```python
+from league_data import League
 
-    data = League.get_data()  # vai apenas resgatar os dados
-    league = League(data=data)  # instanciando e reutilizando os dados
-    champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
-    ```
+data = League.get_data()  # vai apenas resgatar os dados
+league = League(data=data)  # instanciando e reutilizando os dados
+champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
+```
 
 </details>
