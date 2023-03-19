@@ -1,5 +1,7 @@
 # 🌍 League-data
 
+Campeões e skins do League of Legends com facilidade.
+
 [![Documentação](https://readthedocs.org/projects/league-data/badge/?version=latest)](https://league-data.readthedocs.io/en/latest/?badge=latest)
 [![Versão](https://img.shields.io/pypi/v/league-data?color=blue)](https://pypi.org/project/league-data/)
 [![Imports: isort](https://img.shields.io/badge/imports-isort-%231674b1?style=flat)](https://pycqa.github.io/isort/)
@@ -37,4 +39,4 @@ skin = league["ocean song zeri"]  # -> <league_data.models.Skin object at ...>
 
 </details>
 
-[Outros exemplos](https://league-data.readthedocs.io/en/latest/#exemplos) estão disponíveis na documentação.
+[Outros exemplos](https://league-data.readthedocs.io/en/latest/#exemplos) estão disponíveis na [documentação](https://league-data.readthedocs.io/en/latest/).
