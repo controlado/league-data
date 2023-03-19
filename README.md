@@ -57,8 +57,8 @@ pip install league-data
     ```python
     from league_data import League
 
-    league = League()  # vai gerar um data (league.data)
-    league = League(league.data)  # não vai gerar, porque já está recebendo
+    data = League.get_data()  # vai apenas resgatar os dados
+    league = League(data=data)  # instanciando e reutilizando os dados
     champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
     ```
 

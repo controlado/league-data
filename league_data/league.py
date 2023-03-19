@@ -20,15 +20,16 @@ from league_data.models import Champion, Skin
 class League:
     """Tenha acesso facilmente aos dados dos campeões e skins do League of Legends."""
 
-    URL = "https://raw.communitydragon.org"
-
-    def get_data(self) -> dict:
+    @staticmethod
+    def get_data() -> dict:
         """Busca todos os dados dos campeões do League of Legends.
+
+        Uma requisição é feita para conseguir esses dados.
 
         Returns:
             data (dict): Os dados dos campeões e suas skins.
         """
-        url = f"{self.URL}/latest/plugins/rcp-be-lol-game-data/global/default/v1/skins.json"
+        url = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/skins.json"
         response = request(method="get", url=url)
         return response.json()
 
