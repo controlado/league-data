@@ -1,4 +1,4 @@
-# `🌍` League-data
+# 🌍 League-data
 
 [![Documentação](https://readthedocs.org/projects/league-data/badge/?version=latest)](https://league-data.readthedocs.io/en/latest/?badge=latest)
 [![Versão](https://img.shields.io/pypi/v/league-data?color=blue)](https://pypi.org/project/league-data/)
