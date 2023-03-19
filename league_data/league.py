@@ -11,7 +11,7 @@ Licença:
     `GNU` `Version 2`
 """
 
-import requests
+from requests import request
 
 from league_data.explorer import Explorer
 from league_data.models import Champion, Skin
@@ -29,13 +29,18 @@ class League:
             data (dict): Os dados dos campeões e suas skins.
         """
         url = f"{self.URL}/latest/plugins/rcp-be-lol-game-data/global/default/v1/skins.json"
-        response = self.session.request(method="get", url=url)
+        response = request(method="get", url=url)
         return response.json()
 
-    def __init__(self) -> None:
-        """Cria uma sessão e gera os dados necessários."""
-        self.session = requests.Session()
-        self.data = self.get_data()
+    def __init__(self, data: dict = None) -> None:
+        """Cria o um explorador automaticamente para a instância.
+
+        Caso não receba o parâmetro data, o mesmo será requisitado automaticamente.
+
+        Args:
+            data (dict, optional): Dados da Riot.
+        """
+        self.data = data or self.get_data()
         self.explorer = Explorer(self.data)
 
     def __getitem__(self, name: str) -> Champion | Skin | None:
