@@ -1,23 +1,24 @@
-# Página inicial
+# Início
 
 Tenha os dados dos campeões e skins do League of Legends com facilidade.
 
-- [Documentação](https://league-data.readthedocs.io/en/latest/)
 - [Pypi](https://pypi.org/project/league-data/)
+- [Documentação](https://league-data.readthedocs.io/en/latest/)
 - [Releases](https://github.com/controlado/league-data/releases/)
 
 ## Dependências
 
+Você só precisa do Python, qualquer dependência vai ser instalada automaticamente.
+
 - [Python 3.11](https://www.python.org/downloads/release/python-3112/) (ou alguma outra superior)
 - [Requests 2.28.2](https://requests.readthedocs.io/en/latest/) (é instalado automaticamente)
 
-Com o Python instalado, basta seguir as etapas de instalação.
-
 ## Instalação
 
-```
-pip install league-data
-```
+Basta executar esse comando no seu terminal.
+
+    python -m pip install league-data
+
 
 ## Exemplos
 
