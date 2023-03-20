@@ -47,12 +47,12 @@ class Explorer:
         """
         name = name.lower()
 
-        for value in self.champions.values():
-            if name not in value["skins"]:
+        for champion in self.champions.values():
+            if name not in champion["skins"]:
                 continue
 
-            skin_data = value["skins"][name]
-            return Skin(self, value, skin_data)
+            skin_data = champion["skins"][name]
+            return Skin(self, champion, skin_data)
 
         return None
 
