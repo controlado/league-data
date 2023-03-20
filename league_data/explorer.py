@@ -90,7 +90,7 @@ class Explorer:
                 "id": champion_id,
                 "name": champion_name,
                 "art": self.get_splash_art(champion_id, index),
-                "skins": self.__get_champion_skins(champion_id)
+                "skins": self.__get_champion_skins(champion_id),
             }
 
         return champions
@@ -110,7 +110,7 @@ class Explorer:
                 "id": index,
                 "name": skin_name,
                 "rarity": self.data[index]["rarity"],
-                "art": self.get_splash_art(champion_id, index)
+                "art": self.get_splash_art(champion_id, index),
             }
 
         return skins

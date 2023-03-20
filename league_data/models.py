@@ -60,11 +60,7 @@ class Champion:
     def skins(self) -> list[Skin]:
         """Skins que o campeão possui."""
         return [
-            Skin(
-                self.explorer,
-                self.data,
-                self.data["skins"][data]
-            )
+            Skin(self.explorer, self.data, self.data["skins"][data])
             for data in self.data["skins"]
         ]
 
