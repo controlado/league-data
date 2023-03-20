@@ -1,3 +1,6 @@
+[tool.pylint]
+max-line-length = 88
+
 [tool.poetry]
 version = "1.1.1"
 name = "league-data"
@@ -13,6 +16,7 @@ requests = "^2.28.2"
 [tool.poetry.group.dev.dependencies]
 black = "^23.1.0"
 isort = "^5.12.0"
+pylint = "^2.17.0"
 pydocstyle = "^6.3.0"
 
 [tool.poetry.group.docs.dependencies]
