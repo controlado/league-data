@@ -33,6 +33,8 @@ class Explorer:
             champion_data = self.champions[name]
             return Champion(self, champion_data)
 
+        return None
+
     def get_skin(self, name: str) -> Skin | None:
         """Retorna o objeto da skin, caso exista.
 
@@ -45,11 +47,14 @@ class Explorer:
         """
         name = name.lower()
 
-        for champion in self.champions:
-            if name in self.champions[champion]["skins"]:
-                champion_data = self.champions[champion]
-                skin_data = self.champions[champion]["skins"][name]
-                return Skin(self, champion_data, skin_data)
+        for value in self.champions.values():
+            if name not in value["skins"]:
+                continue
+
+            skin_data = value["skins"][name]
+            return Skin(self, value, skin_data)
+
+        return None
 
     @staticmethod
     def get_splash_art(champion_id: str, skin_id: str) -> str:
