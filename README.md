@@ -1,6 +1,6 @@
 <div align="center">
 
-  # `🌍` League-data <br> [![Documentação](https://readthedocs.org/projects/league-data/badge/?version=latest)](https://league-data.readthedocs.io/en/latest/?badge=latest) [![Versão](https://img.shields.io/pypi/v/league-data?color=blue)](https://pypi.org/project/league-data/) [![Imports: isort](https://img.shields.io/badge/imports-isort-%231674b1?style=flat)](https://pycqa.github.io/isort/) [![Estilo: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint)
+  # `🌍` League-data <br> [![Documentação](https://readthedocs.org/projects/league-data/badge/?version=latest)](https://league-data.readthedocs.io/en/latest/?badge=latest) [![Versão](https://img.shields.io/pypi/v/league-data?color=blue)](https://pypi.org/project/league-data/) [![Downloads](https://img.shields.io/pypi/dd/league-data?color=blue)](https://pypi.org/project/league-data/) [![Imports: isort](https://img.shields.io/badge/imports-isort-%231674b1?style=flat)](https://pycqa.github.io/isort/) [![Estilo: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint)
 
   Campeões e skins do League of Legends com facilidade.
 
