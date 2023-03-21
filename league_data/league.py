@@ -37,7 +37,7 @@ class League:
         try:
             response = request(method="get", url=url, timeout=10)
         except Timeout as exception:
-            message = "Não consegui fazer a request..."
+            message = "A request demorou muito para ser finalizada..."
             raise ConnectionError(message) from exception
 
         return response.json()
