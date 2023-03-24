@@ -78,7 +78,7 @@ class League:
     def __init__(self, data: dict = None, champions: dict = None) -> None:
         """Cria o um explorador automaticamente para a instância.
 
-        Caso não receba o parâmetro data, o mesmo será requisitado automaticamente.
+        Caso não receba os parâmetros, serão requisitados automaticamente.
         """
         self.data = data or self.get_data()
         self.explorer = Explorer(self.data, champions)

@@ -70,7 +70,10 @@ class Explorer:
         return f"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/{champion_id}/{skin_id}.jpg"
 
     def __init__(self, data: dict, champions: dict = None) -> None:
-        """Reformula os dados que recebe como parâmetro."""
+        """Reformula os dados que recebe como parâmetro.
+
+        Caso não receba os champions, será requisitado automaticamente.
+        """
         self.data = data  # dados gerados da classe League
         self.champions = champions or self.__get_champions()
 
