@@ -26,7 +26,25 @@ class League:
     Attributes:
         data (dict): Dados da Riot.
         explorer (Explorer): Explorador especializado de dados.
+        champions (dict): Dicionário que o explorador criou.
     """
+
+    def update(self) -> None:
+        """Atualiza os dados e recria o dicionário de campeões.
+
+        Example:
+            ```python linenums="1"
+            from league_data import League
+
+            league = League()
+            milio = league["milio"]  # -> None
+            league.update()  # atualizando os dados e os campeões
+            milio = league["milio"]  # -> <league_data.models.Champion object at ...>
+            ```
+        """
+        self.data = self.get_data()
+        self.explorer = Explorer(self.data)
+        self.champions = self.explorer.champions
 
     @staticmethod
     def get_data() -> dict:
@@ -39,6 +57,13 @@ class League:
 
         Returns:
             data (dict): Os dados dos campeões e suas skins.
+
+        Example:
+            ```python linenums="1" title="Não é necessário instanciar a classe."
+            from league_data import League
+
+            data = League.get_data()  # -> {"1000": {"id": 1000, "isBase": ...}, ...}
+            ```
         """
         url = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/skins.json"
 
@@ -50,13 +75,14 @@ class League:
 
         return response.json()
 
-    def __init__(self, data: dict = None) -> None:
+    def __init__(self, data: dict = None, champions: dict = None) -> None:
         """Cria o um explorador automaticamente para a instância.
 
         Caso não receba o parâmetro data, o mesmo será requisitado automaticamente.
         """
         self.data = data or self.get_data()
-        self.explorer = Explorer(self.data)
+        self.explorer = Explorer(self.data, champions)
+        self.champions = self.explorer.champions
 
     def __getitem__(self, name: str) -> Champion | Skin | None:
         """Retorna os dados do campeão ou skin, caso exista.

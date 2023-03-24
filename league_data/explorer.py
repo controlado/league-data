@@ -69,10 +69,10 @@ class Explorer:
         """Retorna a URL do campeão ou da skin desejada com base em seus IDS."""
         return f"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/{champion_id}/{skin_id}.jpg"
 
-    def __init__(self, data: dict) -> None:
+    def __init__(self, data: dict, champions: dict = None) -> None:
         """Reformula os dados que recebe como parâmetro."""
-        self.data = data
-        self.champions = self.__get_champions()
+        self.data = data  # dados gerados da classe League
+        self.champions = champions or self.__get_champions()
 
     def __getitem__(self, name: str) -> Champion | Skin | None:
         """Retorna os dados do campeão ou skin, caso exista.

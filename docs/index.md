@@ -53,11 +53,19 @@ Basta executar esse comando no seu terminal.
 <details>
     <summary> Reutilizar os dados antigos </summary>
 
-    ```python linenums="1" title="Ao instanciar a classe League, é gerado os dados se não o receber no parâmetro."
+    ```python linenums="1" title="Reutilizando apenas os dados, você acelera o código em 8 vezes."
     from league_data import League
 
-    data = League.get_data()  # vai apenas resgatar os dados
-    league = League(data=data)  # instanciando e reutilizando os dados
+    data = League.get_data()  # vai resgatar apenas os dados, sem instanciar
+    league = League(data)  # reutilizando os dados e gerando o dicionário de campeões
+    champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
+    ```
+
+    ```python linenums="1" title="Reutilizando os dados e os campeões, você acelera o código em 750 mil vezes."
+    from league_data import League
+
+    old = League()  # gerando os dados e o dicionário de campeões
+    league = League(old.data, old.champions)  # reutilizando os dados e o dicionário de campeões
     champion = league["zeri"]  # -> <league_data.models.Champion object at ...>
     ```
 
