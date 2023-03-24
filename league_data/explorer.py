@@ -15,7 +15,15 @@ from league_data.models import Champion, Skin
 
 
 class Explorer:
-    """Explore e entenda facilmente os dados dos campeões."""
+    """Explore e entenda facilmente os dados dos campeões.
+
+    Args:
+        data (dict): Dados da Riot.
+
+    Attributes:
+        data (dict): Dados da Riot.
+        champions (dict): Os dados da Riot, porém, reestruturados.
+    """
 
     def get_champion(self, name: str) -> Champion | None:
         """Retorna o objeto do campeão, caso exista.

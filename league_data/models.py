@@ -22,16 +22,13 @@ if TYPE_CHECKING:  # apenas para tipagem estática
 class Champion:
     """Objeto que contém as informações de um campeão.
 
-    Parameters:
+    Args:
         explorer (Explorer): Explorador que buscou esse campeão.
         data (dict): Os dados desse campeão.
 
     Attributes:
         explorer (Explorer): Explorador que buscou esse campeão.
         data (dict): Os dados desse campeão.
-        identity (str): ID do campeão.
-        name (str): Nome do campeão.
-        art (str): URL da arte do campeão.
 
     Example:
         ```python linenums="1"
@@ -86,7 +83,7 @@ class Champion:
 class Skin:
     """Objeto que contém as informações de uma skin.
 
-    Parameters:
+    Args:
         explorer (Explorer): Explorador que buscou essa skin.
         champion (dict): Dados do campeão que possui essa skin.
         data (dict): Os dados dessa skin.
@@ -95,10 +92,6 @@ class Skin:
         explorer (Explorer): Explorador que buscou essa skin.
         champion_data (dict): Dados do campeão que possui essa skin.
         data (dict): Os dados dessa skin.
-        identity (str): ID da skin.
-        name (str): Nome da skin.
-        art (str): URL da arte da skin.
-        rarity (str): Raridade da skin.
 
     Example:
         ```python linenums="1"

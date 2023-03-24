@@ -18,7 +18,15 @@ from league_data.models import Champion, Skin
 
 
 class League:
-    """Tenha acesso facilmente aos dados dos campeões e skins do League of Legends."""
+    """Tenha acesso facilmente aos dados dos campeões e skins do League of Legends.
+
+    Args:
+        data (dict, optional): Dados da Riot.
+
+    Attributes:
+        data (dict): Dados da Riot.
+        explorer (Explorer): Explorador especializado de dados.
+    """
 
     @staticmethod
     def get_data() -> dict:
@@ -46,9 +54,6 @@ class League:
         """Cria o um explorador automaticamente para a instância.
 
         Caso não receba o parâmetro data, o mesmo será requisitado automaticamente.
-
-        Args:
-            data (dict, optional): Dados da Riot.
         """
         self.data = data or self.get_data()
         self.explorer = Explorer(self.data)
