@@ -24,9 +24,11 @@ class Champion:
 
     Parameters:
         explorer (Explorer): Explorador que buscou esse campeão.
-        data (dict): Os dados crus desse campeão.
+        data (dict): Os dados desse campeão.
 
     Attributes:
+        explorer (Explorer): Explorador que buscou esse campeão.
+        data (dict): Os dados desse campeão.
         identity (str): ID do campeão.
         name (str): Nome do campeão.
         art (str): URL da arte do campeão.
@@ -86,10 +88,13 @@ class Skin:
 
     Parameters:
         explorer (Explorer): Explorador que buscou essa skin.
-        champion_data (dict): Dados do campeão que possui essa skin.
-        data (dict): Os dados crus dessa skin.
+        champion (dict): Dados do campeão que possui essa skin.
+        data (dict): Os dados dessa skin.
 
     Attributes:
+        explorer (Explorer): Explorador que buscou essa skin.
+        champion_data (dict): Dados do campeão que possui essa skin.
+        data (dict): Os dados dessa skin.
         identity (str): ID da skin.
         name (str): Nome da skin.
         art (str): URL da arte da skin.
