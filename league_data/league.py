@@ -21,12 +21,13 @@ class League:
     """Tenha acesso facilmente aos dados dos campeões e skins do League of Legends.
 
     Args:
-        data (dict, optional): Dados da Riot.
+        data (dict, optional): Dados da Riot, gerados pelo League.
+        champions (dict, optional): Dicionário de campeões, gerados pelo Explorer.
 
     Attributes:
         data (dict): Dados da Riot.
-        explorer (Explorer): Explorador especializado de dados.
-        champions (dict): Dicionário que o explorador criou.
+        explorer (Explorer): Explorador de dados.
+        champions (dict): Dicionário de campeões.
     """
 
     def update(self) -> None:

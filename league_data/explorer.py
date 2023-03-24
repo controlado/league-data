@@ -18,11 +18,12 @@ class Explorer:
     """Explore e entenda facilmente os dados dos campeões.
 
     Args:
-        data (dict): Dados da Riot.
+        data (dict): Dados da Riot, gerados pelo League.
+        champions (dict, optional): Dicionário de campeões, gerados pelo Explorer.
 
     Attributes:
         data (dict): Dados da Riot.
-        champions (dict): Os dados da Riot, porém, reestruturados.
+        champions (dict): Dicionário de campeões.
     """
 
     def get_champion(self, name: str) -> Champion | None:
