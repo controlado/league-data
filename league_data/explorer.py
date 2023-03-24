@@ -85,10 +85,8 @@ class Explorer:
             Skin (Skin): Objeto da skin encontrada.
             None (None): Nenhum item foi encontrado.
         """
-        if champion := self.get_champion(name):
-            return champion
-
-        return self.get_skin(name)
+        champion = self.get_champion(name)
+        return champion or self.get_skin(name)
 
     def __get_champions(self) -> dict:
         champions = {}
