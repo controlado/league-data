@@ -1,5 +1,5 @@
 [tool.poetry]
-version = "1.2.1"
+version = "1.2.2"
 name = "league-data"
 description = "Tenha acesso facilmente aos dados dos campeões e skins do League of Legends."
 readme = "README.md"
