@@ -13,7 +13,7 @@ Licença:
 
 from requests import Timeout, request
 
-from league_data.explorer import Explorer
+from league_data import Explorer
 from league_data.models import Champion, Skin
 
 
