@@ -4,7 +4,7 @@ name = "league-data"
 description = "Tenha acesso facilmente aos dados dos campeões e skins do League of Legends."
 readme = "README.md"
 authors = ["Yan Gabriel <yangabrielogy@gmail.com>"]
-packages = [{include = "league_data"}]
+packages = [{ include = "league_data" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -25,7 +25,7 @@ mkdocstrings-python = "^0.8.3"
 profile = "black"
 
 [tool.pylint]
-max-line-length = 88
+max-line-length = "88"
 disable = ["missing-module-docstring"]
 
 [build-system]
