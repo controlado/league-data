@@ -22,10 +22,6 @@ if TYPE_CHECKING:  # apenas para tipagem estática
 class Champion:
     """Objeto que contém as informações de um campeão.
 
-    Args:
-        explorer (Explorer): Explorador que buscou esse campeão.
-        data (dict): Os dados desse campeão.
-
     Attributes:
         explorer (Explorer): Explorador que buscou esse campeão.
         data (dict): Os dados desse campeão.
@@ -40,7 +36,12 @@ class Champion:
     """
 
     def __init__(self, explorer: Explorer, data: dict) -> None:
-        """Instancia o objeto contendo as informações do campeão."""
+        """Instancia o objeto contendo as informações do campeão.
+
+        Args:
+            explorer (Explorer): Explorador que buscou esse campeão.
+            data (dict): Os dados desse campeão.
+        """
         self.explorer = explorer
         self.data = data
 
@@ -83,11 +84,6 @@ class Champion:
 class Skin:
     """Objeto que contém as informações de uma skin.
 
-    Args:
-        explorer (Explorer): Explorador que buscou essa skin.
-        champion (dict): Dados do campeão que possui essa skin.
-        data (dict): Os dados dessa skin.
-
     Attributes:
         explorer (Explorer): Explorador que buscou essa skin.
         champion_data (dict): Dados do campeão que possui essa skin.
@@ -105,7 +101,13 @@ class Skin:
     """
 
     def __init__(self, explorer: Explorer, champion: dict, data: dict) -> None:
-        """Instancia o objeto contendo as informações da skin."""
+        """Instancia o objeto contendo as informações da skin.
+
+        Args:
+            explorer (Explorer): Explorador que buscou essa skin.
+            champion (dict): Dados do campeão que possui essa skin.
+            data (dict): Os dados dessa skin.
+        """
         self.explorer = explorer
         self.champion_data = champion
         self.data = data

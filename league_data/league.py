@@ -20,10 +20,6 @@ from league_data.models import Champion, Skin
 class League:
     """Tenha acesso facilmente aos dados dos campeões e skins do League of Legends.
 
-    Args:
-        data (dict, optional): Dados da Riot, gerados pelo League.
-        champions (dict, optional): Dicionário de campeões, gerados pelo Explorer.
-
     Attributes:
         data (dict): Dados da Riot.
         explorer (Explorer): Explorador de dados.
@@ -80,6 +76,10 @@ class League:
         """Cria o um explorador automaticamente para a instância.
 
         Caso não receba os parâmetros, serão requisitados automaticamente.
+
+        Args:
+            data (dict, optional): Dados da Riot, gerados pelo League.
+            champions (dict, optional): Dicionário de campeões, gerados pelo Explorer.
         """
         self.data = data or self.get_data()
         self.explorer = Explorer(self.data, champions)
