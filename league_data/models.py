@@ -82,6 +82,7 @@ class Champion:
         return self.name
 
     def __repr__(self) -> str:
+        """Representa a forma que a instância foi criada."""
         return f"Champion({self.explorer, self.data})"
 
 
@@ -137,4 +138,5 @@ class Skin:
         return self.name
 
     def __repr__(self) -> str:
+        """Representa a forma que a instância foi criada."""
         return f"Skin({self.explorer}, {self.champion.data}, {self.data})"
