@@ -72,7 +72,7 @@ class League:
 
         return response.json()
 
-    def __init__(self, data: dict = None, champions: dict = None) -> None:
+    def __init__(self, data: dict | None = None, champions: dict | None = None) -> None:
         """Cria o um explorador automaticamente para a instância.
 
         Caso não receba os parâmetros, serão requisitados automaticamente.
