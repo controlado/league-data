@@ -49,7 +49,7 @@ class Champion:
         O método faz o processo com list comprehension.
 
         Returns:
-            list[Skin]: Lista com as skins.
+            skins (list[Skin]): Lista com as skins.
         """
         return [
             Skin(
